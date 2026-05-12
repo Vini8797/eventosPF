@@ -1,10 +1,10 @@
-package br.insper.eventosPF.Service;
+package br.insper.eventosPF.service;
 
-import br.insper.eventosPF.DTO.UserRequestDTO;
-import br.insper.eventosPF.DTO.UserResponseDTO;
-import br.insper.eventosPF.Model.User;
+import br.insper.eventosPF.dto.UserRequestDTO;
+import br.insper.eventosPF.dto.UserResponseDTO;
+import br.insper.eventosPF.entity.User;
 import br.insper.eventosPF.Papel;
-import br.insper.eventosPF.Repository.UserRepository;
+import br.insper.eventosPF.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

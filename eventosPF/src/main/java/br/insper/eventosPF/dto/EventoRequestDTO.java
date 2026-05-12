@@ -1,4 +1,4 @@
-package br.insper.eventosPF.DTO;
+package br.insper.eventosPF.dto;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;

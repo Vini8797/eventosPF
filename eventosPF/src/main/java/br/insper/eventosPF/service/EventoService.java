@@ -1,12 +1,12 @@
-package br.insper.eventosPF.Service;
+package br.insper.eventosPF.service;
 
-import br.insper.eventosPF.DTO.EventoRequestDTO;
-import br.insper.eventosPF.DTO.EventoResponseDTO;
-import br.insper.eventosPF.Model.Evento;
-import br.insper.eventosPF.Model.User;
+import br.insper.eventosPF.dto.EventoRequestDTO;
+import br.insper.eventosPF.dto.EventoResponseDTO;
+import br.insper.eventosPF.entity.Evento;
+import br.insper.eventosPF.entity.User;
 import br.insper.eventosPF.Papel;
-import br.insper.eventosPF.Repository.EventoRepository;
-import br.insper.eventosPF.Repository.UserRepository;
+import br.insper.eventosPF.repository.EventoRepository;
+import br.insper.eventosPF.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

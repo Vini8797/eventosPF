@@ -1,8 +1,8 @@
-package br.insper.eventosPF.Controller;
+package br.insper.eventosPF.controller;
 
-import br.insper.eventosPF.DTO.EventoRequestDTO;
-import br.insper.eventosPF.DTO.EventoResponseDTO;
-import br.insper.eventosPF.Service.EventoService;
+import br.insper.eventosPF.dto.EventoRequestDTO;
+import br.insper.eventosPF.dto.EventoResponseDTO;
+import br.insper.eventosPF.service.EventoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

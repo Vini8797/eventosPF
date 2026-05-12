@@ -1,6 +1,6 @@
-package br.insper.eventosPF.Model;
+package br.insper.eventosPF.entity;
 
-import br.insper.eventosPF.DTO.EventoRequestDTO;
+import br.insper.eventosPF.dto.EventoRequestDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,6 +1,6 @@
-package br.insper.eventosPF.DTO;
+package br.insper.eventosPF.dto;
 
-import br.insper.eventosPF.Model.User;
+import br.insper.eventosPF.entity.User;
 import br.insper.eventosPF.Papel;
 import lombok.Getter;
 import lombok.Setter;
