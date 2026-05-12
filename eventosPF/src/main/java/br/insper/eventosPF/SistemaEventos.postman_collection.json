@@ -1,0 +1,204 @@
+{
+  "info": {
+    "name": "Sistema de Eventos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "POST - Criar usuário ADMIN",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-USER-ID", "value": "1" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Carlos Admin\",\n  \"cpf\": \"111.111.111-11\",\n  \"papel\": \"ADMIN\"\n}"
+            },
+            "url": { "raw": "http://localhost:8080/users", "host": ["localhost"], "port": "8080", "path": ["users"] }
+          }
+        },
+        {
+          "name": "POST - Criar usuário USER",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-USER-ID", "value": "1" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João Participante\",\n  \"cpf\": \"222.222.222-22\",\n  \"papel\": \"USER\"\n}"
+            },
+            "url": { "raw": "http://localhost:8080/users", "host": ["localhost"], "port": "8080", "path": ["users"] }
+          }
+        },
+        {
+          "name": "POST - Erro: sem permissão (USER tentando criar)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-USER-ID", "value": "2" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Teste\",\n  \"cpf\": \"333.333.333-33\",\n  \"papel\": \"USER\"\n}"
+            },
+            "url": { "raw": "http://localhost:8080/users", "host": ["localhost"], "port": "8080", "path": ["users"] }
+          }
+        },
+        {
+          "name": "POST - Erro: campos obrigatórios faltando",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-USER-ID", "value": "1" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"\",\n  \"cpf\": null,\n  \"papel\": \"USER\"\n}"
+            },
+            "url": { "raw": "http://localhost:8080/users", "host": ["localhost"], "port": "8080", "path": ["users"] }
+          }
+        },
+        {
+          "name": "GET - Listar usuários",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "http://localhost:8080/users", "host": ["localhost"], "port": "8080", "path": ["users"] }
+          }
+        },
+        {
+          "name": "DELETE - Deletar usuário (id=2)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              { "key": "X-USER-ID", "value": "1" }
+            ],
+            "url": { "raw": "http://localhost:8080/users/2", "host": ["localhost"], "port": "8080", "path": ["users", "2"] }
+          }
+        },
+        {
+          "name": "DELETE - Erro: USER tentando deletar",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              { "key": "X-USER-ID", "value": "2" }
+            ],
+            "url": { "raw": "http://localhost:8080/users/1", "host": ["localhost"], "port": "8080", "path": ["users", "1"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Eventos",
+      "item": [
+        {
+          "name": "POST - Criar evento",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-USER-ID", "value": "1" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Hackathon Insper 2026\",\n  \"data\": \"2026-06-15\"\n}"
+            },
+            "url": { "raw": "http://localhost:8080/eventos", "host": ["localhost"], "port": "8080", "path": ["eventos"] }
+          }
+        },
+        {
+          "name": "POST - Criar segundo evento",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-USER-ID", "value": "1" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Workshop Spring Boot\",\n  \"data\": \"2026-07-20\"\n}"
+            },
+            "url": { "raw": "http://localhost:8080/eventos", "host": ["localhost"], "port": "8080", "path": ["eventos"] }
+          }
+        },
+        {
+          "name": "POST - Erro: sem permissão",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "X-USER-ID", "value": "2" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Evento inválido\",\n  \"data\": \"2026-08-01\"\n}"
+            },
+            "url": { "raw": "http://localhost:8080/eventos", "host": ["localhost"], "port": "8080", "path": ["eventos"] }
+          }
+        },
+        {
+          "name": "GET - Listar eventos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "http://localhost:8080/eventos", "host": ["localhost"], "port": "8080", "path": ["eventos"] }
+          }
+        },
+        {
+          "name": "DELETE - Deletar evento (id=2)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              { "key": "X-USER-ID", "value": "1" }
+            ],
+            "url": { "raw": "http://localhost:8080/eventos/2", "host": ["localhost"], "port": "8080", "path": ["eventos", "2"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Associações",
+      "item": [
+        {
+          "name": "POST - Inscrever usuário 2 no evento 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "X-USER-ID", "value": "1" }
+            ],
+            "url": { "raw": "http://localhost:8080/eventos/1/usuarios/2", "host": ["localhost"], "port": "8080", "path": ["eventos", "1", "usuarios", "2"] }
+          }
+        },
+        {
+          "name": "POST - Erro: inscrever mesmo usuário duas vezes",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "X-USER-ID", "value": "1" }
+            ],
+            "url": { "raw": "http://localhost:8080/eventos/1/usuarios/2", "host": ["localhost"], "port": "8080", "path": ["eventos", "1", "usuarios", "2"] }
+          }
+        },
+        {
+          "name": "POST - Erro: evento não existe",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "X-USER-ID", "value": "1" }
+            ],
+            "url": { "raw": "http://localhost:8080/eventos/999/usuarios/2", "host": ["localhost"], "port": "8080", "path": ["eventos", "999", "usuarios", "2"] }
+          }
+        }
+      ]
+    }
+  ]
+}
